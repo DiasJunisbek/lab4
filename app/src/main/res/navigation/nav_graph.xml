@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/accountFragment">
+
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.example.wineshop.InformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_informationFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_informationFragment_to_editAccountFragment"
+            app:destination="@id/editAccountFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.wineshop.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_informationFragment"
+            app:destination="@id/informationFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_exitFragment"
+            app:destination="@id/exitFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/exitFragment"
+        android:name="com.example.wineshop.account.BottomLogOut"
+        android:label="ExitFragment" >
+        <action
+            android:id="@+id/action_exitFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/editAccountFragment"
+        android:name="com.example.wineshop.EditAccountFragment"
+        android:label="fragment_edit_account"
+        tools:layout="@layout/fragment_edit_account" >
+        <action
+            android:id="@+id/action_editAccountFragment_to_informationFragment"
+            app:destination="@id/informationFragment" />
+    </fragment>
+</navigation>
